@@ -37,12 +37,16 @@ playerspeed = 15
 def mov_left():
   x = player.xcor()
   x -= playerspeed
+  if x < -280 :
+    x = 280
   player.setx(x)
 
 
 def mov_right():
   x = player.xcor()
   x += playerspeed
+  if x > 280 :
+    x = -280
   player.setx(x)
 
 

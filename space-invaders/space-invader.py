@@ -27,6 +27,27 @@ player.shape("triangle")
 player.penup()
 player.speed(0)
 player.setposition(0, -250)
+player.setheading(90)
 
+playerspeed = 15
+
+
+# Move player left and right
+
+def mov_left():
+  x = player.xcor()
+  x -= playerspeed
+  player.setx(x)
+
+
+def mov_right():
+  x = player.xcor()
+  x += playerspeed
+  player.setx(x)
+
+
+turtle.listen()
+turtle.onkey(mov_left, 'Left')
+turtle.onkey(mov_right, 'Right')
 
 delay = input("Press enter to finish")

@@ -42,6 +42,22 @@ player.setheading(90)
 playerspeed = 15
 
 
+# Player weapon
+bullet = turtle.Turtle()
+bullet.color("yellow")
+bullet.shape("triangle")
+bullet.penup()
+bullet.speed(0)
+bullet.setheading(90)
+bullet.shapesize(0.5, 0.5)
+bullet.hideturtle()
+
+bulletspeed = 20
+
+#Bullet state
+
+bulletstate = "ready"
+
 # Move player left and right
 
 def mov_left():
@@ -59,10 +75,22 @@ def mov_right():
     x = 280
   player.setx(x)
 
+def fire_bullet():
+  # declare bullet state as global if it is changed
+  global bulletstate
+  if bulletstate == "ready":
+    bulletstate = "fire"
+    # move bullet to initial state i.e just above player
+    x = player.xcor()
+    y = player.ycor() + 10 # just above player
+    bullet.setposition(x, y)
+    bullet.showturtle()
+
 ## event listener
 turtle.listen()
 turtle.onkey(mov_left, 'Left')
 turtle.onkey(mov_right, 'Right')
+turtle.onkey(fire_bullet,'space')
 
 ## game loop
 while True:
@@ -82,5 +110,16 @@ while True:
     y -= 40
     enmeyspeed *=-1
     enmey.sety(y)
+
+  #Move the bullet
+  if bulletstate == "fire":
+    y = bullet.ycor()
+    y += bulletspeed
+    bullet.sety(y)
+
+  #Bullet boundary
+  if bullet.ycor() > 275:
+    bullet.hideturtle()
+    bulletstate = "ready"
 
 delay = input("Press enter to finish")

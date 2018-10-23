@@ -71,4 +71,16 @@ while True:
   x += enmeyspeed
   enmey.setx(x)
 
+  if enmey.xcor() > 280:
+    y = enmey.ycor()
+    y -= 40
+    enmeyspeed *=-1
+    enmey.sety(y)
+
+  if enmey.xcor() < -280:
+    y = enmey.ycor()
+    y -= 40
+    enmeyspeed *=-1
+    enmey.sety(y)
+
 delay = input("Press enter to finish")

@@ -123,17 +123,21 @@ while True:
     x += enemyspeed
     enemy.setx(x)
 
+    #Move all enemies down
     if enemy.xcor() > 280:
-      y = enemy.ycor()
-      y -= 40
+      for e in enemies:
+        y = e.ycor()
+        y -= 40
+        e.sety(y)
       enemyspeed *=-1
-      enemy.sety(y)
 
+    #Move all enemies down
     if enemy.xcor() < -280:
-      y = enemy.ycor()
-      y -= 40
+      for e in enemies:
+        y = e.ycor()
+        y -= 40
+        e.sety(y)
       enemyspeed *=-1
-      enemy.sety(y)
 
 
     ## Collision detction bullet and enemy
@@ -143,7 +147,9 @@ while True:
       bulletstate= "ready"
       bullet.setposition(0, -400)
       #reset enemy
-      enemy.setposition(-200, 250)
+      x = random.randint(-200, 200)
+      y = random.randint(100, 250)
+      enemy.setposition(x, y)
 
     if isCollision(player, enemy) :
       player.hideturtle()

@@ -2,7 +2,7 @@ import os
 from git import Repo
 
 
-COMMITS_TO_PRINT = 5
+COMMITS_TO_PRINT = 15
 
 
 
@@ -25,8 +25,8 @@ def print_commit(commit):
                                               commit.size)))
 
 if __name__ == "__main__":
-    repo_path = os.getenv('GIT_REPO_PATH')
-    # Repo object used to programmatically interact with Git repositories
+    repo_path = '/Users/aashish/Workspace/SandBox/python-zero'
+  # Repo object used to programmatically interact with Git repositories
     repo = Repo(repo_path)
     # check that the repository loaded correctly
     if not repo.bare:

@@ -1,59 +1,112 @@
+import turtle               # allows us to use the turtles library
+import os
+import math
 import random
-import curses
 
-s = curses.initscr()
-curses.curs_set(0)
-sh, sw = s.getmaxyx()
-w = curses.newwin(sh, sw, 0, 0)
-w.keypad(1)
-w.timeout(100)
+wn = turtle.Screen()  # creates a graphics window
+wn.bgcolor("black")
+wn.title("Snake")
 
-snk_x = sw/4
-snk_y = sh/2
-snake = [
-    [snk_y, snk_x],
-    [snk_y, snk_x-1],
-    [snk_y, snk_x-2]
-]
+#Draw Border
+border_pen = turtle.Turtle()
+border_pen.speed(0)
+border_pen.color("white")
+border_pen.penup()
+border_pen.setposition(-300, -300)
+border_pen.pendown()
+border_pen.pensize(3)
 
-food = [int(sh/2), int(sw/2)]
-w.addch(food[0], food[1], curses.ACS_PI)
+for side in range(4) :
+  border_pen.fd(600)
+  border_pen.lt(90)
+border_pen.hideturtle()
 
-key = curses.KEY_RIGHT
 
+## snake
+snakes = []
+snakes.append(turtle.Turtle()) ## add the head to the snake
+
+snakeSpeed = 10
+headPositionX = 0
+headPositionY = - 250
+snakeX = 0
+snakeY = 0
+snakeDiff = 5
+
+#Food
+food = turtle.Turtle()
+x = random.randint(-290, 290)
+y = random.randint( -290, 290)
+food.speed(3)
+food.color("red")
+food.penup()
+food.setposition(x, y)
+food.pendown()
+food.shape("circle")
+food.pensize(3)
+
+def mov_up():
+    global snakeY, snakeX
+    snakeX = 0
+    snakeY = 1
+
+def mov_down():
+    global snakeY, snakeX
+    snakeX = 0
+    snakeY = -1
+
+
+def mov_right():
+    global snakeX, snakeY
+    snakeX = 1
+    snakeY = 0
+
+def mov_left():
+    global snakeX, snakeY
+    snakeX = -1
+    snakeY = 0
+
+## event listener
+turtle.listen()
+turtle.onkey(mov_up, 'Up')
+turtle.onkey(mov_down, 'Down')
+turtle.onkey(mov_left, 'Left')
+turtle.onkey(mov_right, 'Right')
+# turtle.onkey(fire_bullet,'space')
 
 while True:
-    next_key = w.getch()
-    key = key if next_key == -1 else next_key
 
-    if snake[0][0] in [0, sh] or snake[0][1]  in [0, sw] or snake[0] in snake[1:]:
-        curses.endwin()
-        quit()
+    if snakeX != 0:
+        headPositionX = headPositionX + snakeX * snakeSpeed
 
-    new_head = [snake[0][0], snake[0][1]]
+    if snakeY != 0:
+        headPositionY = headPositionY + snakeY * snakeSpeed
 
-    if key == curses.KEY_DOWN:
-        new_head[0] += 1
-    if key == curses.KEY_UP:
-        new_head[0] -= 1
-    if key == curses.KEY_LEFT:
-        new_head[1] -= 1
-    if key == curses.KEY_RIGHT:
-        new_head[1] += 1
+    for idx, snake in enumerate(snakes) :
+        snakePosX = headPositionX
+        snakePosY = headPositionY
+        if headPositionX > 290:
+            snakePosX = -290
+            headPositionX = snakePosX
 
-    snake.insert(0, new_head)
+        if headPositionX < -290:
+            snakePosX = 290
+            headPositionX = snakePosX
 
-    if snake[0] == food:
-        food = None
-        while food is None:
-            nf = [
-                random.randint(1, sh-1),
-                random.randint(1, sw-1)
-            ]
-            food = nf if nf not in snake else None
-        w.addch(food[0], food[1], curses.ACS_PI)
-    else:
-        tail = snake.pop()
-        w.addch(int(tail[0]), int(tail[1]), ' ')
+        if headPositionY > 290:
+            snakePosY = -290
+            headPositionY = snakePosY
 
-    w.addch(int(snake[0][0]), int(snake[0][1]), curses.ACS_CKBOARD)
+        if headPositionY < -290:
+            snakePosY = 290
+            headPositionY = snakePosY
+
+        snake.color("blue")
+        snake.shape("square")
+        snake.penup()
+        snake.speed(0)
+        snake.setposition(snakePosX ,snakePosY)
+        snake.setheading(90)
+
+
+delay = input("Press enter to finish")

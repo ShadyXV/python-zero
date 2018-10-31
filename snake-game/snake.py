@@ -25,7 +25,6 @@ border_pen.hideturtle()
 ## snake
 snakes = []
 snakes.append(turtle.Turtle()) ## add the head to the snake
-
 snakeSpeed = 10
 headPositionX = 0
 headPositionY = - 250
@@ -39,11 +38,13 @@ x = random.randint(-290, 290)
 y = random.randint( -290, 290)
 food.speed(3)
 food.color("red")
+food.up()
 food.penup()
 food.setposition(x, y)
 food.pendown()
 food.shape("circle")
 food.pensize(3)
+food.pendown()
 
 def mov_up():
     global snakeY, snakeX
@@ -66,13 +67,19 @@ def mov_left():
     snakeX = -1
     snakeY = 0
 
+def isCollision(t1, t2):
+  distance = math.sqrt( math.pow(t1.xcor() - t2.xcor(), 2) + math.pow(t1.ycor() - t2.ycor(), 2) )
+  if distance < 15 :
+    return True
+  else :
+    return False
+
 ## event listener
 turtle.listen()
 turtle.onkey(mov_up, 'Up')
 turtle.onkey(mov_down, 'Down')
 turtle.onkey(mov_left, 'Left')
 turtle.onkey(mov_right, 'Right')
-# turtle.onkey(fire_bullet,'space')
 
 while True:
 
@@ -82,31 +89,56 @@ while True:
     if snakeY != 0:
         headPositionY = headPositionY + snakeY * snakeSpeed
 
-    for idx, snake in enumerate(snakes) :
-        snakePosX = headPositionX
-        snakePosY = headPositionY
-        if headPositionX > 290:
-            snakePosX = -290
-            headPositionX = snakePosX
+    listNumber = len(snakes)
+    head = snakes[0]
+    snakePosX = headPositionX
+    snakePosY = headPositionY
+    if headPositionX > 290:
+        snakePosX = -290
+        headPositionX = snakePosX
 
-        if headPositionX < -290:
-            snakePosX = 290
-            headPositionX = snakePosX
+    if headPositionX < -290:
+        snakePosX = 290
+        headPositionX = snakePosX
 
-        if headPositionY > 290:
-            snakePosY = -290
-            headPositionY = snakePosY
+    if headPositionY > 290:
+        snakePosY = -290
+        headPositionY = snakePosY
 
-        if headPositionY < -290:
-            snakePosY = 290
-            headPositionY = snakePosY
+    if headPositionY < -290:
+        snakePosY = 290
+        headPositionY = snakePosY
 
-        snake.color("blue")
-        snake.shape("square")
-        snake.penup()
-        snake.speed(0)
-        snake.setposition(snakePosX ,snakePosY)
-        snake.setheading(90)
+    head.color("blue")
+    head.shape("square")
+    head.penup()
+    head.speed(0)
+    head.setposition(snakePosX ,snakePosY)
+    head.setheading(90)
+
+
+    for i in range(1, listNumber, 1):
+        body = snakes[i]
+        prevX = snakePosX + 15 * i * snakeX
+        prevY = snakePosY + 15 * i * snakeY
+        print(prevX, prevY)
+        body.color("blue")
+        body.shape("square")
+        body.penup()
+        body.speed(0)
+        body.setheading(90)
+        body.setposition(prevX, prevY)
+
+    if isCollision(snakes[0], food):
+        snakes.append(turtle.Turtle())
+        x = random.randint(-290, 290)
+        y = random.randint( -290, 290)
+        food.up()
+        food.pendown()
+        food.speed(0)
+        food.setx(x)
+        food.sety(y)
+        food.clear()
 
 
 delay = input("Press enter to finish")

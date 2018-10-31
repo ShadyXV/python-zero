@@ -121,7 +121,6 @@ while True:
         body = snakes[i]
         prevX = snakePosX + 15 * i * snakeX
         prevY = snakePosY + 15 * i * snakeY
-        print(prevX, prevY)
         body.color("blue")
         body.shape("square")
         body.penup()

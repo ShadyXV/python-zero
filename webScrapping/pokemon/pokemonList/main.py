@@ -5,7 +5,9 @@ import os
 
 first_gen_list_pokemon = []
 
-raw_html = simple_get('https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number')
+first_gen_url = 'https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number'
+
+raw_html = simple_get(first_gen_url)
 check_web = len(raw_html) > 0
 html = BeautifulSoup(raw_html, 'html.parser')
 if (check_web) :

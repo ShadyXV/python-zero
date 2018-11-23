@@ -11,7 +11,6 @@ def simple_get(url):
     """
     try:
         with closing(get(url, stream=True)) as resp:
-            print(resp)
             if is_good_response(resp):
                 return resp.content
             else:

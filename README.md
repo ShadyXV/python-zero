@@ -11,3 +11,4 @@ pip install requirements.txt
 3) space-invaders : classic space inavedr game made using Turle library
 4) webScrapping : few project on webscrapping using BeautifulSoup
 5) imageManipulation: projects on image manipulation
+6) webCrawling: few projects on webcrawling using Scrapy

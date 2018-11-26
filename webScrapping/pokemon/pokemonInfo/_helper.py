@@ -38,3 +38,12 @@ def log_error(e):
     make it do anything.
     """
     print(e)
+
+def json_helper(title, value= None):
+    if (value == None):
+        return "\"%s\": {\n" % str(title)
+
+    elif value.isdigit():
+        return "\"%s\" : %s" % (title, value)
+
+    return "\"%s\" : \"%s\"" % (title, str(value))

@@ -14,3 +14,4 @@ pip install requirements.txt
 6) webCrawling: projects on webcrawling using Scrapy
 7) redis: projects using redis
 8) webScreenShots: project on getting screen shot of a website using selenium
+9) slowLoris: use case of slowloris attack

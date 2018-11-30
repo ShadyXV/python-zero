@@ -1,7 +1,7 @@
 import socket
 
 msgFromClient = "Hello server"
-bytersToSend = str.encode(msgFromClient)
+bytesToSend = str.encode(msgFromClient)
 serverAddressPort = ("127.0.0.1", 20001)
 bufferSize  = 1024
 
@@ -9,7 +9,7 @@ bufferSize  = 1024
 UDPClientSocket = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)
 
 # send to server using create dudp socket
-UDPClientSocket.sendto(bytersToSend, serverAddressPort)
+UDPClientSocket.sendto(bytesToSend, serverAddressPort)
 
 msgFromServer = UDPClientSocket.recvfrom(bufferSize)
 

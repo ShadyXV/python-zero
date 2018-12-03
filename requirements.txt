@@ -13,9 +13,12 @@ GitPython==2.1.11
 hyperlink==18.0.0
 idna==2.7
 incremental==17.5.0
+Logbook==1.4.1
 lxml==4.2.5
+numpy==1.15.4
 parsel==1.5.1
 Pillow==5.3.0
+py==1.7.0
 pyasn1==0.4.4
 pyasn1-modules==0.2.2
 pycparser==2.19

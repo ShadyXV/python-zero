@@ -1,3 +1,3 @@
-## Resource
+### Pillow
 
-https://www.codementor.io/isaib.cicourel/image-manipulation-in-python-du1089j1u
+projects on image manipultaion using pillow library

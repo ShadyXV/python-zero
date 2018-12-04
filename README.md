@@ -16,3 +16,4 @@ pip install requirements.txt
 8) webScreenShots: projects on getting screen shot of a website using selenium
 9) slowLoris: use case of slowloris attack
 10) Networking: projects on networking
+11) MachineLearning: projects on machine learning

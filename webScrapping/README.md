@@ -1,12 +1,4 @@
-## Resource
-
-
-https://realpython.com/python-web-scraping-practical-introduction/
-
-```python
-pip install requirements.txt
-```
-
 ## Projects
 
-1) mathematics : same project in the mentioned url
+1) BeautifulSoup : projects made using beautifulsoup library.
+2) Native: projects using native/ standard python library.

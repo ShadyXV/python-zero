@@ -1,4 +1,4 @@
 ## Contents
 
 1) Turtle : games made using turtle library
-2) Native: games made using no graphic libary
+2) termcolor: games made using  termcolor libary

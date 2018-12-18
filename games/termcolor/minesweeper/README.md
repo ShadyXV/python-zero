@@ -1,7 +1,7 @@
 ### RESOURCE
 https://repl.it/talk/learn/MineSweeper/9397?ref=newsletter
 
-### INSTRUCTIONS
+### INSTRUCTIONS:
 
 
 The aim of MineSweeper is to determine the locations of 10 bombs, randomly placed in a 9x9 grid.
@@ -12,3 +12,15 @@ If you think you know the position of a bomb, type 'M' followed by the coordinat
 You win by 'opening' all of the squares except those with bombs in.
 NB: It is luck on the first move.
 Good luck!
+
+### Command:
+
+```python
+  python main.py
+```
+
+### Output:
+
+![screen shot 2018-12-18 at 10 35 18 am](https://user-images.githubusercontent.com/12614476/50132732-a8bd7900-02b0-11e9-91ee-f8016a328b29.png)
+![screen shot 2018-12-18 at 10 35 26 am](https://user-images.githubusercontent.com/12614476/50132735-ab1fd300-02b0-11e9-8400-9e1ff7f0167d.png)
+

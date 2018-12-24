@@ -9,8 +9,10 @@ chardet==3.0.4
 constantly==15.1.0
 cryptography==2.4.2
 cssselect==1.0.3
+futures==3.1.1
 gitdb2==2.0.5
 GitPython==2.1.11
+goslate==1.5.1
 hyperlink==18.0.0
 idna==2.7
 incremental==17.5.0

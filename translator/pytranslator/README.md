@@ -19,4 +19,4 @@
 <img width="605" alt="screen shot 2018-12-24 at 2 55 24 pm" src="https://user-images.githubusercontent.com/12614476/50395427-fbed6b00-078b-11e9-94f1-f54de12a192a.png">
 
 
-![giphy](https://user-images.githubusercontent.com/12614476/50395447-1de6ed80-078c-11e9-980e-8ef26b8f8318.gif)
+![giphy](https://user-images.githubusercontent.com/12614476/50396192-820bb080-0790-11e9-8135-21339ee6fcdb.gif)

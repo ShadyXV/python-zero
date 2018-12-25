@@ -11,6 +11,3 @@ class PYTRANSLATOR:
   def translate(self, text):
     result = self.yandex.translate(self.yandex, lang=self.language, text=text)
     return result[0]
-
-py = PYTRANSLATOR('ru')
-print(py.translate('hello'))

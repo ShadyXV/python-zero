@@ -14,8 +14,8 @@ pip install requirements.txt
 6) Networking: projects on networking
 7) redis: projects using redis
 8) speechReognition: project on speech to text and recognition
-8) spellChecker: library to check the spelling
-9) translator: projects on language translator
-10) webCrawling: projects on webcrawling using Scrapy
-11) webScrapping: projects on webscrapping
-12) webScreenShots: projects on getting screen shot of a website using selenium
+9) spellChecker: library to check the spelling
+10) translator: projects on language translator
+11) webCrawling: projects on webcrawling using Scrapy
+12) webScrapping: projects on webscrapping
+13) webScreenShots: projects on getting screen shot of a website using selenium

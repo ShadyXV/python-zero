@@ -46,6 +46,7 @@ selenium==3.141.0
 service-identity==17.0.0
 six==1.11.0
 smmap2==2.0.5
+SpeechRecognition==3.8.1
 termcolor==1.1.0
 tqdm==4.28.1
 twine==1.12.1

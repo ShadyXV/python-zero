@@ -13,6 +13,7 @@ pip install requirements.txt
 5) MachineLearning: projects on machine learning
 6) Networking: projects on networking
 7) redis: projects using redis
+8) speechReognition: project on speech to text and recognition
 8) spellChecker: library to check the spelling
 9) translator: projects on language translator
 10) webCrawling: projects on webcrawling using Scrapy

@@ -1,0 +1,6 @@
+[submodule "customLibraries/pytranslator"]
+	path = customLibraries/pytranslator
+	url = https://github.com/karkipy/pytranslator
+[submodule "customLibraries/spellChecker"]
+	path = customLibraries/spellChecker
+	url = https://github.com/karkipy/spellchecker

@@ -53,7 +53,7 @@ MAIN MENU
     startTime = time.time()
 
     #The game begins!
-    play(b, k, startTime)
+    play(b, k, time.time())
 
 #Gets the value of a coordinate on the grid.
 def l(r, c, b):

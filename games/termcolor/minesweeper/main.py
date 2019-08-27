@@ -214,7 +214,7 @@ def choose(b, k):
                 c = chosenValues[0]
                 r = chosenValues[1]
                 marker(r, c, k)
-                play(b, k, startTime)
+                play(b, k, time.time())
                 break
         if len(chosen) == 2 and chosen[0] in letters and chosen[1] in numbers:
             break

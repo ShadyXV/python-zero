@@ -9,7 +9,7 @@ async def hello(websocket, path):
     name = await websocket.recv()
     print(name)
 
-    greeting = f"Hello {name}!"
+    greeting = name
 
     await websocket.send(greeting)
     print(greeting)

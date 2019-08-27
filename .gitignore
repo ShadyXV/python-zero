@@ -57,6 +57,3 @@ crashlytics-build.properties
 
 staticfiles
 .env
-
-.pytest_cache/
-pytest/

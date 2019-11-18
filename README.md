@@ -8,7 +8,7 @@ pip install requirements.txt
 
 - customLibraries: collection of custom made libraries
 - games: games made using different libaries
-- github: projects on github
+- github: projects on github basic functionalities
 - hacking : projects on hacking related stuffs
 - imageManipulation: projects on image manipulation
 - MachineLearning: projects on machine learning

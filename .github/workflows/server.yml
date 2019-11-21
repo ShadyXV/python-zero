@@ -1,4 +1,4 @@
-name: Pull Request
+name: Pull Request for server
 
 on:
   pull_request:
@@ -17,7 +17,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        echo 'server hello'
+        echo 'server hello from'
       env:
         MERGE_LABELS: "server"
 

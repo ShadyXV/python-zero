@@ -1,0 +1,24 @@
+name: Pull Request
+
+on:
+  pull_request:
+    type: [closed, labeled]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.x]
+    steps:
+    - uses: actions/checkout@master
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        echo 'server hello'
+      env:
+        MERGE_LABELS: "server"
+

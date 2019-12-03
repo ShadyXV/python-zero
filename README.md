@@ -19,4 +19,5 @@ pip install requirements.txt
 - web: project on web using flask and django
 - webCrawling: projects on webcrawling using Scrapy
 - webScrapping: projects on webscrapping
+- translator: translates languages
 - webScreenShots: projects on getting screen shot of a website using selenium

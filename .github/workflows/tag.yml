@@ -1,8 +1,8 @@
-name: Tag Creation
+name: Tag Creation on any
 on:
   create:
     tags:
-      - py*
+      - pyk@*
     branches:
       - any
 

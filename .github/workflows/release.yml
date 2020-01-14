@@ -1,11 +1,11 @@
-name: Tag Creation on master
+name: Tag Creation on release
+
 on:
   create:
     tags:
-      - py*
+      - pyk@*
     branches:
       - release
-
 jobs:
   build:
     runs-on: ubuntu-latest

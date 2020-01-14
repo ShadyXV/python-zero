@@ -2,7 +2,7 @@ name: Tag Creation on master
 on:
   create:
     tags:
-      - py*
+      - pyk@*
     branches:
       - master
 

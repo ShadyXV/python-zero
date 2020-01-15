@@ -20,4 +20,3 @@ pip install requirements.txt
 - webCrawling: projects on webcrawling using Scrapy
 - webScrapping: projects on webscrapping
 - translator: translates languages
-- webScreenShots: projects on getting screen shot of a website using selenium
